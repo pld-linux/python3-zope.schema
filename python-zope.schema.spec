@@ -10,7 +10,7 @@ Summary:	zope.interface extension for defining data schemas
 Summary(pl.UTF-8):	Rozszerzenie zope.interface do definiowania schematów danych
 Name:		python-%{module}
 Version:	5.0.1
-Release:	1
+Release:	2
 License:	ZPL v2.1
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/z/zope.schema/zope.schema-%{version}.tar.gz
