@@ -84,11 +84,21 @@ Dokumentacja API modułu Pythona zope.schema.
 
 %build
 %if %{with python2}
-%py_build %{?with_tests:test}
+%py_build
+
+%if %{with tests}
+PYTHONPATH=$(pwd)/src \
+zope-testrunner-2 --test-path=src -v
+%endif
 %endif
 
 %if %{with python3}
-%py3_build %{?with_tests:test}
+%py3_build
+
+%if %{with tests}
+PYTHONPATH=$(pwd)/src \
+zope-testrunner-3 --test-path=src -v
+%endif
 %endif
 
 %if %{with doc}
@@ -121,8 +131,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.rst COPYRIGHT.txt LICENSE.txt README.rst
 %{py_sitescriptdir}/zope/schema
-%{py_sitescriptdir}/zope.schema-*.egg-info
-%{py_sitescriptdir}/zope.schema-*-nspkg.pth
+%{py_sitescriptdir}/zope.schema-%{version}-py*.egg-info
+%{py_sitescriptdir}/zope.schema-%{version}-py*-nspkg.pth
 %endif
 
 %if %{with python3}
@@ -130,12 +140,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.rst COPYRIGHT.txt LICENSE.txt README.rst
 %{py3_sitescriptdir}/zope/schema
-%{py3_sitescriptdir}/zope.schema-*.egg-info
-%{py3_sitescriptdir}/zope.schema-*-nspkg.pth
+%{py3_sitescriptdir}/zope.schema-%{version}-py*.egg-info
+%{py3_sitescriptdir}/zope.schema-%{version}-py*-nspkg.pth
 %endif
 
 %if %{with doc}
 %files apidocs
 %defattr(644,root,root,755)
-%doc docs/_build/html/{_modules,_static,*.html,*.js}
+%doc docs/_build/html/{_static,*.html,*.js}
 %endif
