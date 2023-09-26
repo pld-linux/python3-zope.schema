@@ -9,12 +9,13 @@
 Summary:	zope.interface extension for defining data schemas
 Summary(pl.UTF-8):	Rozszerzenie zope.interface do definiowania schematów danych
 Name:		python-%{module}
-Version:	5.0.1
-Release:	3
+# keep 6.x here for python2 support
+Version:	6.2.1
+Release:	1
 License:	ZPL v2.1
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/z/zope.schema/zope.schema-%{version}.tar.gz
-# Source0-md5:	5aa985ab95a1ca1ed0e9fb59a7b66bd8
+# Source0-md5:	4def0eb61a3d69a4ae262965bfded3a1
 URL:		https://www.zope.dev/
 %if %{with python2}
 BuildRequires:	python >= 1:2.7
@@ -23,19 +24,19 @@ BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-zope.event
 BuildRequires:	python-zope.i18nmessageid
-BuildRequires:	python-zope.interface >= 3.6.0
+BuildRequires:	python-zope.interface >= 5.0.0
 BuildRequires:	python-zope.testing
 BuildRequires:	python-zope.testrunner
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3 >= 1:3.4
-BuildRequires:	python3-devel >= 1:3.4
+BuildRequires:	python3 >= 1:3.5
+BuildRequires:	python3-devel >= 1:3.5
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-zope.event
 BuildRequires:	python3-zope.i18nmessageid
-BuildRequires:	python3-zope.interface >= 3.6.0
+BuildRequires:	python3-zope.interface >= 5.0.0
 BuildRequires:	python3-zope.testing
 BuildRequires:	python3-zope.testrunner
 %endif
@@ -60,7 +61,7 @@ Rozszerzenie zope.interface do definiowania schematów danych.
 Summary:	zope.interface extension for defining data schemas
 Summary(pl.UTF-8):	Rozszerzenie zope.interface do definiowania schematów danych
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.4
+Requires:	python3-modules >= 1:3.5
 
 %description -n python3-%{module}
 zope.interface extension for defining data schemas.
