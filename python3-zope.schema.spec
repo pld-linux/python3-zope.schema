@@ -13,6 +13,7 @@ License:	ZPL v2.1
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/z/zope.schema/zope.schema-%{version}.tar.gz
 # Source0-md5:	d938af4000a89fa101d2f48f7a8fdd75
+Patch0:		zope.schema-intersphinx.patch
 URL:		https://www.zope.dev/
 BuildRequires:	python3 >= 1:3.7
 BuildRequires:	python3-devel >= 1:3.7
@@ -53,6 +54,7 @@ Dokumentacja API modułu Pythona zope.schema.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch -P0 -p1
 
 %build
 %py3_build

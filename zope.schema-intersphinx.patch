@@ -1,0 +1,13 @@
+--- zope.schema-7.0.1/docs/conf.py.orig	2025-04-29 22:22:00.870185191 +0200
++++ zope.schema-7.0.1/docs/conf.py	2025-04-29 22:22:09.666901620 +0200
+@@ -252,8 +252,8 @@ texinfo_documents = [
+ #texinfo_show_urls = 'footnote'
+ 
+ intersphinx_mapping = {
+-    'https://docs.python.org/': None,
+-    'https://zopecomponent.readthedocs.io/en/latest': None,
++    "python": ('https://docs.python.org/', None),
++    "zope": ('https://zopecomponent.readthedocs.io/en/latest', None),
+ }
+ 
+ extlinks = {'issue': ('https://github.com/zopefoundation/zope.schema/issues/%s',
